@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boiler Functions Matching Quiz (Dropdown)</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    table { border-collapse: collapse; width: 100%; margin-bottom: 20px; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    input[type="text"], select { width: 100%; padding: 4px; }
+    .result { font-weight: bold; margin-top: 20px; }
+    .correct-input { background-color: #d4edda; }
+    .incorrect-input { background-color: #f8d7da; }
+    .button-group { margin-top: 10px; }
+    button { margin-right: 10px; }
+  </style>
+</head>
+<body>
+  <h2>Boiler Functions Matching Quiz (Dropdown)</h2>
+  <p>Enter the sticky note number and select the correct part from the dropdown. Once complete, notify your instructor and click "Submit" in their presence to see your score.</p>
+
+  <form id="quizForm">
+    <table>
+      <thead>
+        <tr><th>Function</th><th>Boiler Number</th><th>Select Part</th></tr>
+      </thead>
+      <tbody id="quizTable"></tbody>
+    </table>
+    <div class="button-group">
+      <button type="submit">Submit</button>
+      <button type="button" onclick="location.reload()">Refresh</button>
+    </div>
+  </form>
+  <div class="result" id="result"></div>
+
+  <script>
+    const data = [{'func': 'Traps air as it flows through piping system', 'num': '3', 'part': 'Air Scoop'}, {'func': 'Allows for water to expand in volume', 'num': '8', 'part': 'Expansion Tank'}, {'func': 'Measures Temperature and Pressure', 'num': '1', 'part': 'Temperature/Pressure gauge'}, {'func': 'Prevents downdrafts from causing rollout and adds dilution air', 'num': '13', 'part': 'Draft Diverter'}, {'func': 'Controls operating temperature in the boiler', 'num': '2', 'part': 'Aqua stat'}, {'func': 'Automatically removes air from the system', 'num': '9', 'part': 'Automatic Air Vent'}, {'func': 'Pushes/Pulls water through the system', 'num': '17', 'part': 'Pump'}, {'func': 'Controls water flow in a specific Area', 'num': '14', 'part': 'Zone Valve'}, {'func': 'Puts in water automatically when it is low', 'num': '16', 'part': 'PRV Pressure reducing valve'}, {'func': 'Prevents boiler from blowing up', 'num': '10', 'part': 'Pop off safety valve'}, {'func': 'Used to get air out of boiler with Skate Key', 'num': '5', 'part': 'Manuel Air Vent'}, {'func': 'Ignites the main burner', 'num': '12', 'part': 'Hot Surface Ignitor'}, {'func': 'Prevents contamination of city water system', 'num': '15', 'part': 'Backflow preventer'}, {'func': 'Shuts down burner when downdraft occurs', 'num': '4', 'part': 'Diverter Limit Switch'}, {'func': 'Lets water out of the boiler', 'num': '7', 'part': 'Boiler Drain'}, {'func': 'Flue pipe used in 80% eff or less boiler', 'num': '11', 'part': 'Galvanized Flue Pipe'}, {'func': 'Traps heat during burner off cycle', 'num': '6', 'part': 'Vent damper'}];
+
+    // Alphabetical dropdown options
+    const options = ['Air Scoop', 'Aqua stat', 'Automatic Air Vent', 'Backflow preventer', 'Boiler Drain', 'Diverter Limit Switch', 'Draft Diverter', 'Expansion Tank', 'Galvanized Flue Pipe', 'Hot Surface Ignitor', 'Manuel Air Vent', 'PRV Pressure reducing valve', 'Pop off safety valve', 'Pump', 'Temperature/Pressure gauge', 'Vent damper', 'Zone Valve'];
+
+    const table = document.getElementById("quizTable");
+
+    data.forEach((item, index) => {
+      const row = document.createElement("tr");
+      row.innerHTML = `
+        <td>${item.func}</td>
+        <td><input type="text" name="num-${index}" /></td>
+        <td>
+          <select name="part-${index}">
+            <option value="">-- Select Part --</option>
+            ${options.map(opt => `<option value="${opt}">${opt}</option>`).join("")}
+          </select>
+        </td>
+      `;
+      table.appendChild(row);
+    });
+
+    document.getElementById("quizForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      let correct = 0;
+      const rows = table.querySelectorAll("tr");
+      rows.forEach((row, index) => {
+        const numInput = row.querySelector("input");
+        const partSelect = row.querySelector("select");
+
+        const num = numInput.value.trim();
+        const part = partSelect.value.trim();
+
+        const numCorrect = num === data[index].num;
+        const partCorrect = part === data[index].part;
+
+        numInput.className = numCorrect ? "correct-input" : "incorrect-input";
+        partSelect.className = partCorrect ? "correct-input" : "incorrect-input";
+
+        if (numCorrect) correct++;
+        if (partCorrect) correct++;
+      });
+
+      const total = data.length * 2;
+      const score = Math.round((correct / total) * 100);
+      document.getElementById("result").textContent = `You scored ${score}% (${correct} out of ${total})`;
+    });
+  </script>
+</body>
+</html>

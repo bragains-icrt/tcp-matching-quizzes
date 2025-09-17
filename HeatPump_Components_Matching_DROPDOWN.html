@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Heat Pump Components Matching Quiz (Dropdown)</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    table { border-collapse: collapse; width: 100%; margin-bottom: 20px; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    input[type="text"], select { width: 100%; padding: 4px; }
+    .result { font-weight: bold; margin-top: 20px; }
+    .correct-input { background-color: #d4edda; }
+    .incorrect-input { background-color: #f8d7da; }
+    .button-group { margin-top: 10px; }
+    button { margin-right: 10px; }
+  </style>
+</head>
+<body>
+  <h2>Heat Pump Components Matching Quiz (Dropdown)</h2>
+  <p>Enter the sticky note number and select the correct part from the dropdown. Once complete, notify your instructor and click "Submit" in their presence to see your score.</p>
+
+  <form id="quizForm">
+    <table>
+      <thead>
+        <tr><th>Function</th><th>Number</th><th>Select Part</th></tr>
+      </thead>
+      <tbody id="quizTable">
+        
+        <tr>
+          <td>Determines which mode unit will operate in</td>
+          <td><input type="text" name="num-0" /></td>
+          <td>
+            <select name="part-0">
+              <option value="">-- Select Part --</option>
+              <option value="4 way valve">4 way valve</option><option value="Defrost control">Defrost control</option><option value="Heat strips and/or Aux heat">Heat strips and/or Aux heat</option><option value="High temperature limit">High temperature limit</option><option value="Indoor coil cooling mode">Indoor coil cooling mode</option><option value="Indoor coil heating mode">Indoor coil heating mode</option><option value="Low pressure test port">Low pressure test port</option><option value="Nameplate">Nameplate</option><option value="Orifice/Bullet">Orifice/Bullet</option><option value="Outdoor Coil Heating mode">Outdoor Coil Heating mode</option><option value="Outdoor coil cooling mode">Outdoor coil cooling mode</option><option value="TXV">TXV</option><option value="Thermostat">Thermostat</option><option value="Transformer">Transformer</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Generates auxiliary and emergency heat</td>
+          <td><input type="text" name="num-1" /></td>
+          <td>
+            <select name="part-1">
+              <option value="">-- Select Part --</option>
+              <option value="4 way valve">4 way valve</option><option value="Defrost control">Defrost control</option><option value="Heat strips and/or Aux heat">Heat strips and/or Aux heat</option><option value="High temperature limit">High temperature limit</option><option value="Indoor coil cooling mode">Indoor coil cooling mode</option><option value="Indoor coil heating mode">Indoor coil heating mode</option><option value="Low pressure test port">Low pressure test port</option><option value="Nameplate">Nameplate</option><option value="Orifice/Bullet">Orifice/Bullet</option><option value="Outdoor Coil Heating mode">Outdoor Coil Heating mode</option><option value="Outdoor coil cooling mode">Outdoor coil cooling mode</option><option value="TXV">TXV</option><option value="Thermostat">Thermostat</option><option value="Transformer">Transformer</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Thaws out the heat pump</td>
+          <td><input type="text" name="num-2" /></td>
+          <td>
+            <select name="part-2">
+              <option value="">-- Select Part --</option>
+              <option value="4 way valve">4 way valve</option><option value="Defrost control">Defrost control</option><option value="Heat strips and/or Aux heat">Heat strips and/or Aux heat</option><option value="High temperature limit">High temperature limit</option><option value="Indoor coil cooling mode">Indoor coil cooling mode</option><option value="Indoor coil heating mode">Indoor coil heating mode</option><option value="Low pressure test port">Low pressure test port</option><option value="Nameplate">Nameplate</option><option value="Orifice/Bullet">Orifice/Bullet</option><option value="Outdoor Coil Heating mode">Outdoor Coil Heating mode</option><option value="Outdoor coil cooling mode">Outdoor coil cooling mode</option><option value="TXV">TXV</option><option value="Thermostat">Thermostat</option><option value="Transformer">Transformer</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Maintains constant super heat</td>
+          <td><input type="text" name="num-3" /></td>
+          <td>
+            <select name="part-3">
+              <option value="">-- Select Part --</option>
+              <option value="4 way valve">4 way valve</option><option value="Defrost control">Defrost control</option><option value="Heat strips and/or Aux heat">Heat strips and/or Aux heat</option><option value="High temperature limit">High temperature limit</option><option value="Indoor coil cooling mode">Indoor coil cooling mode</option><option value="Indoor coil heating mode">Indoor coil heating mode</option><option value="Low pressure test port">Low pressure test port</option><option value="Nameplate">Nameplate</option><option value="Orifice/Bullet">Orifice/Bullet</option><option value="Outdoor Coil Heating mode">Outdoor Coil Heating mode</option><option value="Outdoor coil cooling mode">Outdoor coil cooling mode</option><option value="TXV">TXV</option><option value="Thermostat">Thermostat</option><option value="Transformer">Transformer</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Step down transformer</td>
+          <td><input type="text" name="num-4" /></td>
+          <td>
+            <select name="part-4">
+              <option value="">-- Select Part --</option>
+              <option value="4 way valve">4 way valve</option><option value="Defrost control">Defrost control</option><option value="Heat strips and/or Aux heat">Heat strips and/or Aux heat</option><option value="High temperature limit">High temperature limit</option><option value="Indoor coil cooling mode">Indoor coil cooling mode</option><option value="Indoor coil heating mode">Indoor coil heating mode</option><option value="Low pressure test port">Low pressure test port</option><option value="Nameplate">Nameplate</option><option value="Orifice/Bullet">Orifice/Bullet</option><option value="Outdoor Coil Heating mode">Outdoor Coil Heating mode</option><option value="Outdoor coil cooling mode">Outdoor coil cooling mode</option><option value="TXV">TXV</option><option value="Thermostat">Thermostat</option><option value="Transformer">Transformer</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Meters refrigerant in the cooling mode</td>
+          <td><input type="text" name="num-5" /></td>
+          <td>
+            <select name="part-5">
+              <option value="">-- Select Part --</option>
+              <option value="4 way valve">4 way valve</option><option value="Defrost control">Defrost control</option><option value="Heat strips and/or Aux heat">Heat strips and/or Aux heat</option><option value="High temperature limit">High temperature limit</option><option value="Indoor coil cooling mode">Indoor coil cooling mode</option><option value="Indoor coil heating mode">Indoor coil heating mode</option><option value="Low pressure test port">Low pressure test port</option><option value="Nameplate">Nameplate</option><option value="Orifice/Bullet">Orifice/Bullet</option><option value="Outdoor Coil Heating mode">Outdoor Coil Heating mode</option><option value="Outdoor coil cooling mode">Outdoor coil cooling mode</option><option value="TXV">TXV</option><option value="Thermostat">Thermostat</option><option value="Transformer">Transformer</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Condenser in the heating mode</td>
+          <td><input type="text" name="num-6" /></td>
+          <td>
+            <select name="part-6">
+              <option value="">-- Select Part --</option>
+              <option value="4 way valve">4 way valve</option><option value="Defrost control">Defrost control</option><option value="Heat strips and/or Aux heat">Heat strips and/or Aux heat</option><option value="High temperature limit">High temperature limit</option><option value="Indoor coil cooling mode">Indoor coil cooling mode</option><option value="Indoor coil heating mode">Indoor coil heating mode</option><option value="Low pressure test port">Low pressure test port</option><option value="Nameplate">Nameplate</option><option value="Orifice/Bullet">Orifice/Bullet</option><option value="Outdoor Coil Heating mode">Outdoor Coil Heating mode</option><option value="Outdoor coil cooling mode">Outdoor coil cooling mode</option><option value="TXV">TXV</option><option value="Thermostat">Thermostat</option><option value="Transformer">Transformer</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Condenser in the cooling mode</td>
+          <td><input type="text" name="num-7" /></td>
+          <td>
+            <select name="part-7">
+              <option value="">-- Select Part --</option>
+              <option value="4 way valve">4 way valve</option><option value="Defrost control">Defrost control</option><option value="Heat strips and/or Aux heat">Heat strips and/or Aux heat</option><option value="High temperature limit">High temperature limit</option><option value="Indoor coil cooling mode">Indoor coil cooling mode</option><option value="Indoor coil heating mode">Indoor coil heating mode</option><option value="Low pressure test port">Low pressure test port</option><option value="Nameplate">Nameplate</option><option value="Orifice/Bullet">Orifice/Bullet</option><option value="Outdoor Coil Heating mode">Outdoor Coil Heating mode</option><option value="Outdoor coil cooling mode">Outdoor coil cooling mode</option><option value="TXV">TXV</option><option value="Thermostat">Thermostat</option><option value="Transformer">Transformer</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Evaporator in the heating mode</td>
+          <td><input type="text" name="num-8" /></td>
+          <td>
+            <select name="part-8">
+              <option value="">-- Select Part --</option>
+              <option value="4 way valve">4 way valve</option><option value="Defrost control">Defrost control</option><option value="Heat strips and/or Aux heat">Heat strips and/or Aux heat</option><option value="High temperature limit">High temperature limit</option><option value="Indoor coil cooling mode">Indoor coil cooling mode</option><option value="Indoor coil heating mode">Indoor coil heating mode</option><option value="Low pressure test port">Low pressure test port</option><option value="Nameplate">Nameplate</option><option value="Orifice/Bullet">Orifice/Bullet</option><option value="Outdoor Coil Heating mode">Outdoor Coil Heating mode</option><option value="Outdoor coil cooling mode">Outdoor coil cooling mode</option><option value="TXV">TXV</option><option value="Thermostat">Thermostat</option><option value="Transformer">Transformer</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Evaporator in the cooling mode</td>
+          <td><input type="text" name="num-9" /></td>
+          <td>
+            <select name="part-9">
+              <option value="">-- Select Part --</option>
+              <option value="4 way valve">4 way valve</option><option value="Defrost control">Defrost control</option><option value="Heat strips and/or Aux heat">Heat strips and/or Aux heat</option><option value="High temperature limit">High temperature limit</option><option value="Indoor coil cooling mode">Indoor coil cooling mode</option><option value="Indoor coil heating mode">Indoor coil heating mode</option><option value="Low pressure test port">Low pressure test port</option><option value="Nameplate">Nameplate</option><option value="Orifice/Bullet">Orifice/Bullet</option><option value="Outdoor Coil Heating mode">Outdoor Coil Heating mode</option><option value="Outdoor coil cooling mode">Outdoor coil cooling mode</option><option value="TXV">TXV</option><option value="Thermostat">Thermostat</option><option value="Transformer">Transformer</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Information/data about the unit</td>
+          <td><input type="text" name="num-10" /></td>
+          <td>
+            <select name="part-10">
+              <option value="">-- Select Part --</option>
+              <option value="4 way valve">4 way valve</option><option value="Defrost control">Defrost control</option><option value="Heat strips and/or Aux heat">Heat strips and/or Aux heat</option><option value="High temperature limit">High temperature limit</option><option value="Indoor coil cooling mode">Indoor coil cooling mode</option><option value="Indoor coil heating mode">Indoor coil heating mode</option><option value="Low pressure test port">Low pressure test port</option><option value="Nameplate">Nameplate</option><option value="Orifice/Bullet">Orifice/Bullet</option><option value="Outdoor Coil Heating mode">Outdoor Coil Heating mode</option><option value="Outdoor coil cooling mode">Outdoor coil cooling mode</option><option value="TXV">TXV</option><option value="Thermostat">Thermostat</option><option value="Transformer">Transformer</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Controls Aux and emergency heat</td>
+          <td><input type="text" name="num-11" /></td>
+          <td>
+            <select name="part-11">
+              <option value="">-- Select Part --</option>
+              <option value="4 way valve">4 way valve</option><option value="Defrost control">Defrost control</option><option value="Heat strips and/or Aux heat">Heat strips and/or Aux heat</option><option value="High temperature limit">High temperature limit</option><option value="Indoor coil cooling mode">Indoor coil cooling mode</option><option value="Indoor coil heating mode">Indoor coil heating mode</option><option value="Low pressure test port">Low pressure test port</option><option value="Nameplate">Nameplate</option><option value="Orifice/Bullet">Orifice/Bullet</option><option value="Outdoor Coil Heating mode">Outdoor Coil Heating mode</option><option value="Outdoor coil cooling mode">Outdoor coil cooling mode</option><option value="TXV">TXV</option><option value="Thermostat">Thermostat</option><option value="Transformer">Transformer</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Shuts off heat when overheating occurs</td>
+          <td><input type="text" name="num-12" /></td>
+          <td>
+            <select name="part-12">
+              <option value="">-- Select Part --</option>
+              <option value="4 way valve">4 way valve</option><option value="Defrost control">Defrost control</option><option value="Heat strips and/or Aux heat">Heat strips and/or Aux heat</option><option value="High temperature limit">High temperature limit</option><option value="Indoor coil cooling mode">Indoor coil cooling mode</option><option value="Indoor coil heating mode">Indoor coil heating mode</option><option value="Low pressure test port">Low pressure test port</option><option value="Nameplate">Nameplate</option><option value="Orifice/Bullet">Orifice/Bullet</option><option value="Outdoor Coil Heating mode">Outdoor Coil Heating mode</option><option value="Outdoor coil cooling mode">Outdoor coil cooling mode</option><option value="TXV">TXV</option><option value="Thermostat">Thermostat</option><option value="Transformer">Transformer</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Connects directly to suction line</td>
+          <td><input type="text" name="num-13" /></td>
+          <td>
+            <select name="part-13">
+              <option value="">-- Select Part --</option>
+              <option value="4 way valve">4 way valve</option><option value="Defrost control">Defrost control</option><option value="Heat strips and/or Aux heat">Heat strips and/or Aux heat</option><option value="High temperature limit">High temperature limit</option><option value="Indoor coil cooling mode">Indoor coil cooling mode</option><option value="Indoor coil heating mode">Indoor coil heating mode</option><option value="Low pressure test port">Low pressure test port</option><option value="Nameplate">Nameplate</option><option value="Orifice/Bullet">Orifice/Bullet</option><option value="Outdoor Coil Heating mode">Outdoor Coil Heating mode</option><option value="Outdoor coil cooling mode">Outdoor coil cooling mode</option><option value="TXV">TXV</option><option value="Thermostat">Thermostat</option><option value="Transformer">Transformer</option>
+            </select>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="button-group">
+      <button type="submit">Submit</button>
+      <button type="button" onclick="location.reload()">Refresh</button>
+    </div>
+  </form>
+  <div class="result" id="result"></div>
+
+  <script>
+    const data = [{'func': 'Determines which mode unit will operate in', 'num': '11', 'part': '4 way valve'}, {'func': 'Generates auxiliary and emergency heat', 'num': '2', 'part': 'Heat strips and/or Aux heat'}, {'func': 'Thaws out the heat pump', 'num': '7', 'part': 'Defrost control'}, {'func': 'Maintains constant super heat', 'num': '4', 'part': 'TXV'}, {'func': 'Step down transformer', 'num': '9', 'part': 'Transformer'}, {'func': 'Meters refrigerant in the cooling mode', 'num': '6', 'part': 'Orifice/Bullet'}, {'func': 'Condenser in the heating mode', 'num': '10', 'part': 'Indoor coil heating mode'}, {'func': 'Condenser in the cooling mode', 'num': '12', 'part': 'Outdoor coil cooling mode'}, {'func': 'Evaporator in the heating mode', 'num': '14', 'part': 'Outdoor Coil Heating mode'}, {'func': 'Evaporator in the cooling mode', 'num': '3', 'part': 'Indoor coil cooling mode'}, {'func': 'Information/data about the unit', 'num': '5', 'part': 'Nameplate'}, {'func': 'Controls Aux and emergency heat', 'num': '8', 'part': 'Thermostat'}, {'func': 'Shuts off heat when overheating occurs', 'num': '13', 'part': 'High temperature limit'}, {'func': 'Connects directly to suction line', 'num': '1', 'part': 'Low pressure test port'}];
+
+    document.getElementById("quizForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      let correct = 0;
+      const rows = document.querySelectorAll("#quizTable tr");
+      rows.forEach((row, index) => {
+        const numInput = row.querySelector("input");
+        const partSelect = row.querySelector("select");
+
+        const num = numInput.value.trim();
+        const part = partSelect.value.trim();
+
+        const numCorrect = num === data[index].num;
+        const partCorrect = part === data[index].part;
+
+        numInput.className = numCorrect ? "correct-input" : "incorrect-input";
+        partSelect.className = partCorrect ? "correct-input" : "incorrect-input";
+
+        if (numCorrect) correct++;
+        if (partCorrect) correct++;
+      });
+
+      const total = data.length * 2;
+      const score = Math.round((correct / total) * 100);
+      document.getElementById("result").textContent = `You scored ${score}% (${correct} out of ${total})`;
+    });
+  </script>
+</body>
+</html>

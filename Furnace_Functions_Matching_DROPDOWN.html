@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Furnace Functions Matching Quiz (Dropdown)</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    table { border-collapse: collapse; width: 100%; margin-bottom: 20px; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    input[type="text"], select { width: 100%; padding: 4px; }
+    .result { font-weight: bold; margin-top: 20px; }
+    .correct-input { background-color: #d4edda; }
+    .incorrect-input { background-color: #f8d7da; }
+    .button-group { margin-top: 10px; }
+    button { margin-right: 10px; }
+  </style>
+</head>
+<body>
+  <h2>Furnace Functions Matching Quiz (Dropdown)</h2>
+  <p>Enter the sticky note number and select the correct part from the dropdown. Once complete, notify your instructor and click "Submit" in their presence to see your score.</p>
+
+  <form id="quizForm">
+    <table>
+      <thead>
+        <tr><th>Function</th><th>Furnace Number</th><th>Select Part</th></tr>
+      </thead>
+      <tbody id="quizTable"></tbody>
+    </table>
+    <div class="button-group">
+      <button type="submit">Submit</button>
+      <button type="button" onclick="location.reload()">Refresh</button>
+    </div>
+  </form>
+  <div class="result" id="result"></div>
+
+  <script>
+    const data = [
+      { func: "A tube that delivers gas to the pilot", num: "5", part: "Pilot line" },
+      { func: "A igniting source to light the burners", num: "18", part: "Hot surface igniter" },
+      { func: "Separates combustion air from conditioned air", num: "12", part: "Heat exchanger" },
+      { func: "Mixes fuel and air", num: "19", part: "Burner" },
+      { func: "Category I Furnace type of flue pipe", num: "14", part: "Metal Flue Pipe" },
+      { func: "Operates the fan and prevents overheating to the heat exchanger", num: "3", part: "Fan-limit switch" },
+      { func: "Steps down power supply (120/240 v to 24 v)", num: "22", part: "Transformer" },
+      { func: "Category IV Furnace type of flue pipe", num: "16", part: "PVC Flue Pipe" },
+      { func: "Controls the PRESSURE of the gas", num: "23", part: "Combo gas valve" },
+      { func: "Temperature sensor located in heat exchanger", num: "24", part: "Main limit switch" },
+      { func: "Delivers the gas to the spuds (orifice)", num: "15", part: "Manifold" },
+      { func: "Proves that the inducer is working", num: "2", part: "Pressure Switch" },
+      { func: "Pulls the combustion by-products through the heat exchanger", num: "20", part: "Inducer Motor" },
+      { func: "A duct that brings conditioned air from the conditioned space", num: "21", part: "Return air" },
+      { func: "Generates electricity when inserted into a flame", num: "17", part: "Thermocouple" },
+      { func: "Houses the blower motor", num: "6", part: "Blower Compartment" },
+      { func: "Carries the flame from one burner to the next burner", num: "1", part: "Crossover igniter" },
+      { func: "Required to be on the outside of the furnace in the gas line", num: "4", part: "Manual gas valve" },
+      { func: "Shuts down all the power to the furnace", num: "8", part: "Disconnect switch" },
+      { func: "A duct that delivers heat air to the conditioned space", num: "11", part: "Supply air" },
+      { func: "Helps to prevent rollout in natural draft furnace AKA: Big mouth opening", num: "9", part: "Draft diverter" },
+      { func: "Controls all functions of the furnace", num: "7", part: "Mother board" },
+      { func: "Shuts down burners when flames come out of heat exchanger", num: "10", part: "Roll out limit" },
+      { func: "Controls the FLOW of gas going into the burners", num: "13", part: "Orifice" }
+    ];
+
+    // Alphabetical dropdown options
+    const options = [
+      "Blower Compartment",
+      "Burner",
+      "Combo gas valve",
+      "Crossover igniter",
+      "Disconnect switch",
+      "Draft diverter",
+      "Fan-limit switch",
+      "Heat exchanger",
+      "Hot surface igniter",
+      "Inducer Motor",
+      "Main limit switch",
+      "Manual gas valve",
+      "Manifold",
+      "Metal Flue Pipe",
+      "Mother board",
+      "Orifice",
+      "Pilot line",
+      "Pressure Switch",
+      "PVC Flue Pipe",
+      "Return air",
+      "Roll out limit",
+      "Supply air",
+      "Thermocouple",
+      "Transformer"
+    ];
+
+    const table = document.getElementById("quizTable");
+
+    data.forEach((item, index) => {
+      const row = document.createElement("tr");
+      row.innerHTML = `
+        <td>${item.func}</td>
+        <td><input type="text" name="num-${index}" /></td>
+        <td>
+          <select name="part-${index}">
+            <option value="">-- Select Part --</option>
+            ${options.map(opt => `<option value="${opt}">${opt}</option>`).join("")}
+          </select>
+        </td>
+      `;
+      table.appendChild(row);
+    });
+
+    document.getElementById("quizForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      let correct = 0;
+      const rows = table.querySelectorAll("tr");
+      rows.forEach((row, index) => {
+        const numInput = row.querySelector("input");
+        const partSelect = row.querySelector("select");
+
+        const num = numInput.value.trim();
+        const part = partSelect.value.trim();
+
+        const numCorrect = num === data[index].num;
+        const partCorrect = part === data[index].part;
+
+        numInput.className = numCorrect ? "correct-input" : "incorrect-input";
+        partSelect.className = partCorrect ? "correct-input" : "incorrect-input";
+
+        if (numCorrect) correct++;
+        if (partCorrect) correct++;
+      });
+
+      const total = data.length * 2;
+      const score = Math.round((correct / total) * 100);
+      document.getElementById("result").textContent = `You scored ${score}% (${correct} out of ${total})`;
+    });
+  </script>
+</body>
+</html>
