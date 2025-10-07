@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Heat Pump Components Matching Quiz (Dropdown, Single-Use Enforced)</title>
+  <title>Heat Pump Components Matching Quiz (Dropdown, Colored Options, No Limit)</title>
   <style>
     body { font-family: sans-serif; padding: 20px; }
     table { border-collapse: collapse; width: 100%; margin-bottom: 20px; }
     th, td { border: 1px solid #ccc; padding: 8px; text-align: left; vertical-align: top; }
     input[type="text"], select { width: 100%; padding: 4px; }
-    .result { font-weight: bold; margin-top: 20px; min-height: 1.2em; }
+    .result { font-weight: bold; margin-top: 20px; }
     .correct-input { background-color: #d4edda; }
     .incorrect-input { background-color: #f8d7da; }
     .button-group { margin-top: 10px; display: flex; gap: 10px; flex-wrap: wrap; }
@@ -17,12 +17,9 @@
     .note { font-size: 0.95rem; margin: 0.5rem 0 1rem; color: #333; }
     .muted { color: #666; font-size: 0.95rem; }
 
-    /* Initial colored emphasis */
+    /* Color entire options in the dropdown and when selected */
     select option.cooling { color: #1273de; font-weight: 700; }
     select option.heating { color: #d32f2f; font-weight: 700; }
-
-    /* Fallback look if a browser doesn't gray out disabled options in menus */
-    select option.used { color: black !important; font-weight: normal !important; }
   </style>
 </head>
 <body>
@@ -171,55 +168,21 @@
 
       labeledParts.forEach(([code, label, tag]) => {
         const opt = document.createElement('option');
-        opt.value = label;
+        opt.value = label; // raw value used for scoring
         opt.textContent = code + '. ' + label;
-        if (tag === 'cooling') opt.classList.add('cooling');
-        if (tag === 'heating') opt.classList.add('heating');
+        if (tag === 'cooling') opt.className = 'cooling';
+        if (tag === 'heating') opt.className = 'heating';
         sel.appendChild(opt);
       });
     }
     selects.forEach(populateSelect);
 
-    function updateDisables() {
-      // Gather used values
-      const used = new Set();
-      selects.forEach(sel => {
-        const v = sel.value;
-        if (v) used.add(v);
-      });
-
-      // Disable used options in other selects and adjust appearance
-      selects.forEach(sel => {
-        Array.from(sel.options).forEach(opt => {
-          if (!opt.value) { opt.disabled = false; opt.classList.remove('used'); return; }
-          if (sel.value === opt.value) {
-            // Keep the currently selected option enabled here
-            opt.disabled = false;
-            opt.classList.remove('used');
-          } else if (used.has(opt.value)) {
-            opt.disabled = true;        // enforce single-use
-            opt.classList.add('used');  // force black if browser shows disabled not gray in list
-          } else {
-            opt.disabled = false;
-            opt.classList.remove('used');
-          }
-        });
-      });
-    }
-
-    // Attach change handlers
-    selects.forEach(sel => sel.addEventListener('change', updateDisables));
+    // No single-use restriction: no disabling logic and no change handlers
 
     document.getElementById('resetBtn').addEventListener('click', () => {
       selects.forEach(sel => sel.value = '');
-      updateDisables();
-      document.getElementById('result').textContent = '';
     });
 
-    // Initial state
-    updateDisables();
-
-    // Scoring
     document.getElementById('quizForm').addEventListener('submit', function (e) {
       e.preventDefault();
       let correct = 0;
