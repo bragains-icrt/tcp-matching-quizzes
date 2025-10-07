@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>A/C Components Matching Quiz (Dropdown, No-Duplicates)</title>
+  <title>A/C Components Matching Quiz (Dropdown, No Limit)</title>
   <style>
     body { font-family: sans-serif; padding: 20px; }
     table { border-collapse: collapse; width: 100%; margin-bottom: 20px; }
@@ -162,40 +162,13 @@
         sel.appendChild(opt);
       });
     }
-
     selects.forEach(populateSelect);
 
-    function updateDisables() {
-      const used = new Set();
-      selects.forEach(sel => {
-        const v = sel.value;
-        if (v) used.add(v);
-      });
-
-      selects.forEach(sel => {
-        Array.from(sel.options).forEach(opt => {
-          if (opt.value === '') { opt.disabled = false; return; }
-          if (sel.value === opt.value) {
-            opt.disabled = false;
-          } else {
-            opt.disabled = used.has(opt.value);
-          }
-        });
-      });
-    }
-
-    selects.forEach(sel => {
-      sel.addEventListener('change', () => {
-        updateDisables();
-      });
-    });
+    // No single-use restriction: no disabling logic and no change handlers
 
     document.getElementById('resetBtn').addEventListener('click', () => {
       selects.forEach(sel => sel.value = '');
-      updateDisables();
     });
-
-    updateDisables();
 
     document.getElementById('quizForm').addEventListener('submit', function (e) {
       e.preventDefault();
