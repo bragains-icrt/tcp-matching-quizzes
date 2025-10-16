@@ -125,7 +125,7 @@
   <script>
     const data = [
       { func: 'Determines which mode unit will operate in', num: '11', part: '4 way valve' },
-      { func: 'Generates auxiliary and emergency heat', num: '2',  part: 'Heat strips and/or Aux heat' },
+      { func: 'A source of auxiliary and emergency heat', num: '2',  part: 'Heat strips and/or Aux heat' },
       { func: 'Thaws out the heat pump', num: '7', part: 'Defrost control' },
       { func: 'Maintains constant super heat', num: '4', part: 'TXV' },
       { func: 'Step down transformer', num: '9', part: 'Transformer' },
@@ -137,7 +137,7 @@
       { func: 'Information/data about the unit', num: '5', part: 'Nameplate' },
       { func: 'Controls Aux and emergency heat', num: '8', part: 'Thermostat' },
       { func: 'Shuts off heat when overheating occurs', num: '13', part: 'High temperature limit' },
-      { func: 'Connects directly to suction line', num: '1', part: 'Low pressure test port' }
+      { func: 'Pumps refrigerant in heating and cooling modes', num: '1', part: 'Low pressure test port' }
     ];
 
     const labeledParts = [
@@ -154,7 +154,7 @@
       ['K', 'Orifice/Bullet', ''],
       ['L', 'High temperature limit', ''],
       ['M', 'Transformer', ''],
-      ['N', 'Low pressure test port', '']
+      ['N', 'Compressor', '']
     ];
 
     const selects = Array.from(document.querySelectorAll('.part-select'));
