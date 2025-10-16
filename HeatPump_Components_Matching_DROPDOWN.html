@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Heat Pump Components Matching Quiz (Dropdown, Colored Options, No Limit)</title>
+  <title>Heat Pump Components Matching Exam (Course 8)</title>
   <style>
     body { font-family: sans-serif; padding: 20px; }
     table { border-collapse: collapse; width: 100%; margin-bottom: 20px; }
@@ -16,15 +16,13 @@
     button { margin-right: 10px; }
     .note { font-size: 0.95rem; margin: 0.5rem 0 1rem; color: #333; }
     .muted { color: #666; font-size: 0.95rem; }
-
-    /* Color entire options in the dropdown and when selected */
     select option.cooling { color: #1273de; font-weight: 700; }
     select option.heating { color: #d32f2f; font-weight: 700; }
   </style>
 </head>
 <body>
-  <h2>Heat Pump Components Matching Quiz (Dropdown)</h2>
-  <p>Enter the sticky note number and select the correct part from the dropdown. Each part can only be used once.</p>
+  <h2>Heat Pump Components Matching Exam (Course 8)</h2>
+  <p>Enter the sticky note number and select the correct part from the dropdown.</p>
   <p>Once complete, notify your instructor and click "Submit" in their presence to see your score.</p>
   <p class="note"><strong>Legend used in dropdowns:</strong>
     A. Indoor coil <span style="color:blue;font-weight:bold;">cooling</span> mode,
@@ -41,76 +39,20 @@
         <tr><th>Function</th><th>Number</th><th>Select Part</th></tr>
       </thead>
       <tbody id="quizTable">
-        <tr>
-          <td>Determines which mode unit will operate in</td>
-          <td><input type="text" name="num-0" /></td>
-          <td><select name="part-0" class="part-select"></select></td>
-        </tr>
-        <tr>
-          <td>A source of auxiliary and emergency heat</td>
-          <td><input type="text" name="num-1" /></td>
-          <td><select name="part-1" class="part-select"></select></td>
-        </tr>
-        <tr>
-          <td>Thaws out the heat pump</td>
-          <td><input type="text" name="num-2" /></td>
-          <td><select name="part-2" class="part-select"></select></td>
-        </tr>
-        <tr>
-          <td>Maintains constant super heat</td>
-          <td><input type="text" name="num-3" /></td>
-          <td><select name="part-3" class="part-select"></select></td>
-        </tr>
-        <tr>
-          <td>Step down transformer</td>
-          <td><input type="text" name="num-4" /></td>
-          <td><select name="part-4" class="part-select"></select></td>
-        </tr>
-        <tr>
-          <td>Meters refrigerant in the cooling mode</td>
-          <td><input type="text" name="num-5" /></td>
-          <td><select name="part-5" class="part-select"></select></td>
-        </tr>
-        <tr>
-          <td>Condenser in the heating mode</td>
-          <td><input type="text" name="num-6" /></td>
-          <td><select name="part-6" class="part-select"></select></td>
-        </tr>
-        <tr>
-          <td>Condenser in the cooling mode</td>
-          <td><input type="text" name="num-7" /></td>
-          <td><select name="part-7" class="part-select"></select></td>
-        </tr>
-        <tr>
-          <td>Evaporator in the heating mode</td>
-          <td><input type="text" name="num-8" /></td>
-          <td><select name="part-8" class="part-select"></select></td>
-        </tr>
-        <tr>
-          <td>Evaporator in the cooling mode</td>
-          <td><input type="text" name="num-9" /></td>
-          <td><select name="part-9" class="part-select"></select></td>
-        </tr>
-        <tr>
-          <td>Information/data about the unit</td>
-          <td><input type="text" name="num-10" /></td>
-          <td><select name="part-10" class="part-select"></select></td>
-        </tr>
-        <tr>
-          <td>Controls Aux and emergency heat</td>
-          <td><input type="text" name="num-11" /></td>
-          <td><select name="part-11" class="part-select"></select></td>
-        </tr>
-        <tr>
-          <td>Shuts off heat when overheating occurs</td>
-          <td><input type="text" name="num-12" /></td>
-          <td><select name="part-12" class="part-select"></select></td>
-        </tr>
-        <tr>
-          <td>Connects directly to suction line</td>
-          <td><input type="text" name="num-13" /></td>
-          <td><select name="part-13" class="part-select"></select></td>
-        </tr>
+        <tr><td>Determines which mode unit will operate in</td><td><input type="text" name="num-0" /></td><td><select name="part-0" class="part-select"></select></td></tr>
+        <tr><td>A source of auxiliary and emergency heat</td><td><input type="text" name="num-1" /></td><td><select name="part-1" class="part-select"></select></td></tr>
+        <tr><td>Thaws out the heat pump</td><td><input type="text" name="num-2" /></td><td><select name="part-2" class="part-select"></select></td></tr>
+        <tr><td>Maintains constant super heat</td><td><input type="text" name="num-3" /></td><td><select name="part-3" class="part-select"></select></td></tr>
+        <tr><td>Step down transformer</td><td><input type="text" name="num-4" /></td><td><select name="part-4" class="part-select"></select></td></tr>
+        <tr><td>Meters refrigerant in the cooling mode</td><td><input type="text" name="num-5" /></td><td><select name="part-5" class="part-select"></select></td></tr>
+        <tr><td>Condenser in the heating mode</td><td><input type="text" name="num-6" /></td><td><select name="part-6" class="part-select"></select></td></tr>
+        <tr><td>Condenser in the cooling mode</td><td><input type="text" name="num-7" /></td><td><select name="part-7" class="part-select"></select></td></tr>
+        <tr><td>Evaporator in the heating mode</td><td><input type="text" name="num-8" /></td><td><select name="part-8" class="part-select"></select></td></tr>
+        <tr><td>Evaporator in the cooling mode</td><td><input type="text" name="num-9" /></td><td><select name="part-9" class="part-select"></select></td></tr>
+        <tr><td>Information/data about the unit</td><td><input type="text" name="num-10" /></td><td><select name="part-10" class="part-select"></select></td></tr>
+        <tr><td>Controls Aux and emergency heat</td><td><input type="text" name="num-11" /></td><td><select name="part-11" class="part-select"></select></td></tr>
+        <tr><td>Shuts off heat when overheating occurs</td><td><input type="text" name="num-12" /></td><td><select name="part-12" class="part-select"></select></td></tr>
+        <tr><td>Pumps refrigerant in Heat and Cooling modes</td><td><input type="text" name="num-13" /></td><td><select name="part-13" class="part-select"></select></td></tr>
       </tbody>
     </table>
     <div class="button-group">
@@ -137,7 +79,7 @@
       { func: 'Information/data about the unit', num: '5', part: 'Nameplate' },
       { func: 'Controls Aux and emergency heat', num: '8', part: 'Thermostat' },
       { func: 'Shuts off heat when overheating occurs', num: '13', part: 'High temperature limit' },
-      { func: 'Pumps refrigerant in heating and cooling modes', num: '1', part: 'Compressor' }
+      { func: 'Pumps refrigerant in Heat and Cooling modes', num: '1', part: 'Compressor' }
     ];
 
     const labeledParts = [
@@ -158,17 +100,15 @@
     ];
 
     const selects = Array.from(document.querySelectorAll('.part-select'));
-
     function populateSelect(sel) {
       sel.innerHTML = '';
       const placeholder = document.createElement('option');
       placeholder.value = '';
       placeholder.textContent = '-- Select Part --';
       sel.appendChild(placeholder);
-
       labeledParts.forEach(([code, label, tag]) => {
         const opt = document.createElement('option');
-        opt.value = label; // raw value used for scoring
+        opt.value = label;
         opt.textContent = code + '. ' + label;
         if (tag === 'cooling') opt.className = 'cooling';
         if (tag === 'heating') opt.className = 'heating';
@@ -176,13 +116,9 @@
       });
     }
     selects.forEach(populateSelect);
-
-    // No single-use restriction: no disabling logic and no change handlers
-
     document.getElementById('resetBtn').addEventListener('click', () => {
       selects.forEach(sel => sel.value = '');
     });
-
     document.getElementById('quizForm').addEventListener('submit', function (e) {
       e.preventDefault();
       let correct = 0;
@@ -190,20 +126,15 @@
       rows.forEach((row, index) => {
         const numInput = row.querySelector('input');
         const partSelect = row.querySelector('select');
-
         const num = numInput.value.trim();
         const part = partSelect.value.trim();
-
         const numCorrect = num === data[index].num;
         const partCorrect = part === data[index].part;
-
         numInput.className = numCorrect ? 'correct-input' : 'incorrect-input';
         partSelect.className = partCorrect ? 'correct-input' : 'incorrect-input';
-
         if (numCorrect) correct++;
         if (partCorrect) correct++;
       });
-
       const total = data.length * 2;
       const score = Math.round((correct / total) * 100);
       document.getElementById('result').textContent = 'You scored ' + score + '% (' + correct + ' out of ' + total + ')';
